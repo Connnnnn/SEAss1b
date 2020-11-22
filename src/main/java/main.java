@@ -50,7 +50,7 @@ class Main {
         ML.addModuleToCourse(ML,BSC);
         GIP.addModuleToCourse(GIP,BCT);
 
-        
+
 
 
         for (Course course : c){
