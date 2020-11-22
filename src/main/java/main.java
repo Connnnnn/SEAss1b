@@ -50,6 +50,8 @@ class Main {
         ML.addModuleToCourse(ML,BSC);
         GIP.addModuleToCourse(GIP,BCT);
 
+        
+
 
         for (Course course : c){
             System.out.println("Course Name #" + ((int) c.indexOf(course)+1) +" : "+ course.getCourseName());
@@ -61,7 +63,12 @@ class Main {
                 for(Student st : mod.getStudents()){
                     s.add(st);
 
+
                 }
+            }
+            System.out.println("\n" + "Students in Course : ");
+            for(Student student : course.getStudentsEnrolled()){
+                System.out.println(student.getName());
             }
         }
 
