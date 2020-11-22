@@ -23,8 +23,8 @@
     <dependencies>
         <dependency>
             <groupId>com.github.Connnnnn</groupId>
-            <artifactId>SE3Ass1</artifactId>
-            <version>f4659dc</version>
+            <artifactId>SE31</artifactId>
+            <version>338f79a</version>
         </dependency>
     </dependencies>
 

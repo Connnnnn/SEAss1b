@@ -15,17 +15,11 @@ class Main {
         Modules GIP = new Modules("Graphics & Image Process", "CT4104", new ArrayList<Student>(), new ArrayList<Course>());
         Modules IR = new Modules("Information Retrieval", "CT4100", new ArrayList<Student>(), new ArrayList<Course>());
 
-        Course BCT = new Course("Computer Science & Information Technology", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01), new DateTime(2021,05,15));
-        Course ECE = new Course("Electronic and Electrical Engineering", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01),new DateTime(2021,05,15));
-        Course BSC = new Course("Science", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01),new DateTime(2021,05,15));
-
-        /*
-         Course BCT = new Course("Computer Science & Information Technology", new ArrayList<Modules>(), new ArrayList<Student>(), LocalDate.of(2017,9,01),LocalDate.of(2021,05,15));
-        Course ECE = new Course("Electronic and Electrical Engineering", new ArrayList<Modules>(), new ArrayList<Student>(), LocalDate.of(2017,9,01),LocalDate.of(2021,05,15));
-        Course BSC = new Course("Science", new ArrayList<Modules>(), new ArrayList<Student>(), LocalDate.of(2017,9,01),LocalDate.of(2021,05,15));
+        Course BCT = new Course("Computer Science & Information Technology", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01, 00, 00), new DateTime(2021,05,15, 00, 00));
+        Course ECE = new Course("Electronic and Electrical Engineering", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01, 00, 00),new DateTime(2021,05,15, 00, 00));
+        Course BSC = new Course("Science", new ArrayList<Modules>(), new ArrayList<Student>(), new DateTime(2017,9,01, 00, 00),new DateTime(2021,05,15, 00, 00));
 
 
-         */
         c.add(BCT);
         c.add(ECE);
         c.add(BSC);
@@ -39,23 +33,22 @@ class Main {
         s.add(Declan);
 
 
+        ML.addStudent(Conor,ML);
+        AI.addStudent(Conor,AI);
+        GIP.addStudent(Conor,GIP);
+        ML.addStudent(Eve,ML);
+        IR.addStudent(Eve,IR);
+        ML.addStudent(Declan, ML);
+        IR.addStudent(Declan, IR);
 
-        main.addStudentsToModule(ML, Conor);
-        main.addStudentsToModule(AI, Conor);
-        main.addStudentsToModule(GIP, Conor);
-        main.addStudentsToModule(ML, Eve);
-        main.addStudentsToModule(IR, Eve);
-        main.addStudentsToModule(ML, Declan);
-        main.addStudentsToModule(IR, Declan);
-
-        main.addModulesToCourse(ML,BCT);
-        main.addModulesToCourse(AI,BCT);
-        main.addModulesToCourse(IR,BCT);
-        main.addModulesToCourse(GIP,BCT);
-        main.addModulesToCourse(ML,ECE);
-        main.addModulesToCourse(AI,BCT);
-        main.addModulesToCourse(ML,BSC);
-        main.addModulesToCourse(GIP,BCT);
+        ML.addModuleToCourse(ML,BCT);
+        AI.addModuleToCourse(AI,BCT);
+        IR.addModuleToCourse(IR,BCT);
+        GIP.addModuleToCourse(GIP,BCT);
+        ML.addModuleToCourse(ML,ECE);
+        AI.addModuleToCourse(AI,BCT);
+        ML.addModuleToCourse(ML,BSC);
+        GIP.addModuleToCourse(GIP,BCT);
 
 
         for (Course course : c){
@@ -77,7 +70,7 @@ class Main {
         }
     }
 
-
+/*
     public void addStudentToCourse(Student s, Course c){
         ArrayList<Course> activeCourses = s.getCourses();
         if(activeCourses.contains(c)==true){
@@ -131,6 +124,6 @@ class Main {
         }
     }
 
-
+*/
 }
 
