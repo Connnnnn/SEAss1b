@@ -38,26 +38,17 @@ class Main {
         m.add(GIP);
         m.add(IR);
 
-
-        ML.addStudent(Conor, ML);
-        AI.addStudent(Conor, AI);
-        GIP.addStudent(Conor, GIP);
-        ML.addStudent(Eve, ML);
-        IR.addStudent(Eve, IR);
-        ML.addStudent(Declan, ML);
-        IR.addStudent(Declan, IR);
+        BCT.AddStudentToCourse(Conor, BCT);
+        ECE.AddStudentToCourse(Declan, ECE);
+        BSC.AddStudentToCourse(Eve, BSC);
 
         ML.addModuleToCourse(ML, BCT);
         AI.addModuleToCourse(AI, BCT);
-        IR.addModuleToCourse(IR, BCT);
-        GIP.addModuleToCourse(GIP, BCT);
-        ML.addModuleToCourse(ML, ECE);
-        AI.addModuleToCourse(AI, BCT);
-        ML.addModuleToCourse(ML, BSC);
-        GIP.addModuleToCourse(GIP, BCT);
+        IR.addModuleToCourse(IR, BSC);
+        GIP.addModuleToCourse(GIP, ECE);
 
 
-        System.out.println("\n" + "---------------Course Information--------------- "+"\n");
+        System.out.println("\n" + "---------------Course Information--------------- " + "\n");
         for (Course course : c) {
             System.out.println("Course Name #" + ((int) c.indexOf(course) + 1) + " : " + course.getCourseName());
             System.out.println("\n" + "Modules in Course : ");
@@ -66,11 +57,12 @@ class Main {
                 System.out.println(mod.getModName());
 
                 for (Student st : mod.getStudents()) {
-                    if (s.contains(st) == false) {
+                    if (!s.contains(st)) {
                         s.add(st);
                     }
                 }
             }
+
             System.out.println("\n" + "Students in Course : ");
             for (Student student : course.getStudentsEnrolled()) {
                 System.out.println(student.getName());
@@ -79,7 +71,7 @@ class Main {
             System.out.println("\n" + "________________________________");
         }
 
-        System.out.println("\n" + "---------------Students Information---------------"+"\n");
+        System.out.println("\n" + "---------------Students Information---------------" + "\n");
         for (Student student : s) {
             System.out.println("Username:" + student.getUsername());
 
@@ -95,15 +87,13 @@ class Main {
             System.out.println("________________________________");
         }
 
-        System.out.println("\n" + "---------------Module Information---------------"+"\n");
-        for(Modules mod : m){
-
-            System.out.println("Module Name: "+mod.getModName() + "");
-
-
+        System.out.println("\n" + "---------------Module Information---------------" + "\n");
+        for (Modules mod : m) {
+            System.out.println("Module Name: " + mod.getModName());
         }
     }
 }
+
 
 
 
